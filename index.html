@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/vue@2.7.8/dist/vue.js"></script> 
+    <title>Pet Store</title>
+</head>
+<body>
+    <div id="webstore">
+        <h1>{{ message }}</h1>
+        <main>
+            <figure>
+                <img v-bind:src="product.image" alt="IMG001">
+                <h2 v-text="product.title"></h2>
+                <p v-text ="product.id"> </p>
+                <p v-text="product.description"></p>
+                <p>Price: {{ product.price }}</p>
+            </figure>
+        </main>
+    </div>
+
+<script>
+    let webstore = new Vue({
+        el: "#webstore",
+        data: {
+            message: "Welcome!!!",
+            product: {
+                id: 1001,
+                title: 'Cat Food 25 lb bag',
+                description: 'Premium cat food for healthy cats.',
+                price: '2000',
+                image: "IMAGES/IMG001.jpeg"  // <-- relative path
+            }
+        }
+    });
+</script>
+</body>
+</html>
